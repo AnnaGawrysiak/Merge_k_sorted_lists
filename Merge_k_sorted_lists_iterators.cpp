@@ -7,18 +7,6 @@
 
 typedef std::pair<std::list<int>::iterator, std::list<int>::iterator> pi;
 
-/*
-Question: Write a program that takes as input a set of sorted sequences and computes the union of these sequences as a sorted sequence.
-
-Example:
-
-Input
-[ [3,5,7], [0,6], [0, 6, 28] ]
-
-Output:
- [0, 0, 3, 5, 6, 6, 7, 28]
-*/
-
 struct comparator
 {
     bool operator()(pi a, pi b)
@@ -32,7 +20,7 @@ void printList(const std::list<int>& mylist);
 
 std::list <int> mergeKLists(const std::vector<pi>& heads_and_tails);
 
-void add_list(std::vector<pi>& heads_and_tails, std::list<int> list);
+void add_list(std::vector<pi>& heads_and_tails, std::list<int>& list);
 
 int main()
 {
@@ -94,7 +82,7 @@ void printList(const std::list<int>& mylist)
 
 }
 
-void add_list(std::vector<pi>& heads_and_tails, std::list<int> mylist)
+void add_list(std::vector<pi>& heads_and_tails, std::list<int>& mylist)
 {
     heads_and_tails.push_back(std::make_pair(mylist.begin(), mylist.end()));
 }
